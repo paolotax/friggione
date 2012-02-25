@@ -1,0 +1,69 @@
+
+
+
+%fieldset
+  %legend My Recipe
+  .control-group
+    %label.control-label{ for: :title } Title
+    .controls
+      = f.text_field :title, :class => 'input-xlarge', :required => true
+      
+  .control-group
+    %label.control-label{ for: :summary } Summary
+    .controls
+      = f.text_area :summary, :class => 'input-xlarge', rows: 3, :required => true
+
+  .control-group
+    %label.control-label{ for: :author } Author
+    .controls
+      = f.text_field :author, :class => 'input-large', :required => true
+
+  .control-group
+    %label.control-label{ for: :yield } Yield
+    .controls
+      = f.text_field :yield, :class => 'input-large', :required => true
+
+  .control-group
+    %label.control-label{ for: :photo } Photo
+    .controls
+      = f.file_field :photo
+
+
+      
+%fieldset
+  %legend Ingredients
+  = f.fields_for :ingredients do |ingredient|
+    .control-group
+      .controls.form-inline
+        = ingredient.text_field :content, :class => 'input-medium', :placeholder => 'Ingredient'
+        = ingredient.text_field :um,      :class => 'input-small',  :placeholder => 'Type'
+        = ingredient.text_field :value,   :class => 'input-small',  :placeholder => 'Value'
+        
+
+%fieldset
+  %legend Instructions
+  = f.fields_for :instructions do |instruction|
+    .control-group
+      .controls
+        = instruction.text_area :content, :class => 'input-xlarge', rows: 3
+
+.form-actions
+  %button{:class => "btn primary", :type => "submit"} Save
+  or
+  = link_to "Cancel", recipes_path
+
+
+/ .clearfix
+/   = f.label :duration, t("activerecord.attributes.recipe.duration", :default => "Duration"), :class => :label
+/   .input
+/     = f.text_field :duration, :class => 'text_field'
+/ .clearfix
+/   = f.label :cooking_time, t("activerecord.attributes.recipe.cooking_time", :default => "Cooking time"), :class => :label
+/   .input
+/     = f.time_select :cooking_time, :class => 'time_select'
+/ .clearfix
+/   = f.label :prep_time, t("activerecord.attributes.recipe.prep_time", :default => "Prep time"), :class => :label
+/   .input
+/     = f.time_select :prep_time, :class => 'time_select'
+
+

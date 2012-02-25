@@ -1,0 +1,28 @@
+%div.hrecipe.well
+  %h2.fn= @recipe.title
+  by
+  %span.author= @recipe.author
+  %span.datePublished= @recipe.created_at
+  %br
+  %br
+  %p.summary= @recipe.summary
+  %img{ src: "#{@recipe.photo}", class: "photo", width: 100, height: 100, alt: "#{@recipe.title}"}
+
+  %section.ingredients
+    %h3 Ingredients
+    %ul
+      - for i in @recipe.ingredients do
+        %li.ingredients= i.content
+
+  %section.instrucions
+    %h3 Instructions
+    %ol
+      - for i in @recipe.instructions do
+        %li
+          %p= i.content
+      
+
+  .form-actions
+    = link_to "Back", recipes_path, :class => 'btn'
+    = link_to "Edit", edit_recipe_path(@recipe), :class => 'btn'
+    = link_to "Delete", recipe_path(@recipe), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn'
