@@ -9,8 +9,8 @@ class CreateRecipes < ActiveRecord::Migration
       t.string :photo
       t.string :video_url  
       t.date   :published_at
-      t.time   :cooking_time
-      t.time   :prep_time
+      t.string   :cooking_time
+      t.string   :prep_time
       t.string :slug
       
       t.timestamps

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20120225091404) do
   create_table "ingredients", :force => true do |t|
     t.string   "content"
     t.string   "um"
-    t.integer  "value"
+    t.string   "value"
     t.integer  "position"
     t.integer  "recipe_id"
     t.datetime "created_at", :null => false
@@ -28,7 +28,8 @@ ActiveRecord::Schema.define(:version => 20120225091404) do
   create_table "instructions", :force => true do |t|
     t.string   "content"
     t.string   "position"
-    t.time     "prep_time"
+    t.string   "prep_time"
+    t.string   "photo"
     t.integer  "recipe_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -45,8 +46,8 @@ ActiveRecord::Schema.define(:version => 20120225091404) do
     t.string   "photo"
     t.string   "video_url"
     t.date     "published_at"
-    t.time     "cooking_time"
-    t.time     "prep_time"
+    t.string   "cooking_time"
+    t.string   "prep_time"
     t.string   "slug"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
@@ -56,6 +57,8 @@ ActiveRecord::Schema.define(:version => 20120225091404) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "nickname"
+    t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "image"

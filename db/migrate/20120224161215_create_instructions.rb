@@ -3,7 +3,8 @@ class CreateInstructions < ActiveRecord::Migration
     create_table :instructions do |t|
       t.string :content
       t.string :position
-      t.time :prep_time
+      t.string :prep_time
+      t.string :photo
       t.integer :recipe_id
       t.timestamps
     end
