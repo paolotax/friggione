@@ -34,6 +34,7 @@ gem 'omniauth-google-oauth2'
 # gem "rmagick"
 gem 'fog'
 gem "carrierwave"
+gem 'friendly_id'
 
 gem 'pg'
 

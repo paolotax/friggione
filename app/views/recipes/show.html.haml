@@ -1,4 +1,11 @@
 %div.hrecipe.well
+  %div.video
+    %a.sublime{ href: "#{@recipe.video}" }
+      Clikkami
+      %img{ src: "http://localhost:3000/images/video-thumb.jpg", alt: "" }
+    %video.sublime.zoom{ style: "display:none", width: "640", height: "360", preload: "none"}
+      %source{ src: "#{@recipe.video}" }
+      
   %h2.fn= @recipe.title
   by
   %span.author= @recipe.author
@@ -26,3 +33,5 @@
     = link_to "Back", recipes_path, :class => 'btn'
     = link_to "Edit", edit_recipe_path(@recipe), :class => 'btn'
     = link_to "Delete", recipe_path(@recipe), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn'
+
+

@@ -28,6 +28,10 @@
     .controls
       = f.file_field :photo
 
+  .control-group
+    %label.control-label{ for: :video } Video
+    .controls
+      = f.file_field :video
 
       
 %fieldset
@@ -46,6 +50,11 @@
     .control-group
       .controls
         = instruction.text_area :content, :class => 'input-xlarge', rows: 3
+    .control-group
+      %label.control-label{ for: :photo } Photo
+      .controls
+        = instruction.file_field :photo
+    
 
 .form-actions
   %button{:class => "btn primary", :type => "submit"} Save

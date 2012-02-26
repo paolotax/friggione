@@ -7,4 +7,13 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :instructions, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
   
   mount_uploader :photo, PhotoUploader
+  mount_uploader :video, VideoUploader
+  
+  extend FriendlyId
+  friendly_id :title, use: :history
+
+  def should_generate_new_friendly_id?
+    new_record?
+  end
+  
 end

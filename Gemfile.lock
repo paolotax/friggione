@@ -61,6 +61,7 @@ GEM
       nokogiri (>= 1.4.4)
       ruby-hmac
     formatador (0.2.1)
+    friendly_id (4.0.0)
     haml (3.1.4)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -174,6 +175,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   fog
+  friendly_id
   haml-rails
   jquery-rails
   omniauth-facebook
