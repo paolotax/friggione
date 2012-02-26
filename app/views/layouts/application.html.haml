@@ -31,12 +31,11 @@
             %span.i-bar
             %span.i-bar
             %span.i-bar
-          %a.brand{:href => "#"}Friggione.it
+          %a.brand{:href => ""}Friggione.it
           .nav-collapse
             %ul.nav
-              %li= link_to "Link 1", "#"
-              %li= link_to "Link 2", "#"
-              %li= link_to "Link 3", "#"
+              %li= link_to "Ricette", "/recipes"
+              %li= link_to "Nuova ricetta", "/recipes/new"
               
             .pull-right
               %ul.nav
@@ -68,14 +67,14 @@
           .well.sidebar-nav
             %ul.nav.nav-list
               %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li= link_to "Ricette", "/recipes"
+              %li= link_to "Nuova ricetta", "/recipes/new"
+              
         .span9
           = yield
     
       %footer
-        %p &copy; Company 2012
+        %p &copy; taxSoft 2012
     /
       Le javascript
       \==================================================
