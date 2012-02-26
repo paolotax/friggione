@@ -35,6 +35,7 @@ gem 'omniauth-google-oauth2'
 gem 'fog'
 gem "carrierwave"
 gem 'friendly_id'
+gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 
 gem 'pg'
 

@@ -1,6 +1,3 @@
-
-
-
 %fieldset
   %legend My Recipe
   .control-group
@@ -42,8 +39,9 @@
         = ingredient.text_field :content, :class => 'input-medium', :placeholder => 'Ingredient'
         = ingredient.text_field :um,      :class => 'input-small',  :placeholder => 'Type'
         = ingredient.text_field :value,   :class => 'input-small',  :placeholder => 'Value'
+        = ingredient.link_to_remove "Remove"
+  = f.link_to_add "Add Ingredient", :ingredients
         
-
 %fieldset
   %legend Instructions
   = f.fields_for :instructions do |instruction|
@@ -54,6 +52,8 @@
       %label.control-label{ for: :photo } Photo
       .controls
         = instruction.file_field :photo
+    = instruction.link_to_remove "Remove"
+  = f.link_to_add "Add Instruction", :instructions
     
 
 .form-actions

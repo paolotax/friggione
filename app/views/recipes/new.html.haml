@@ -1,2 +1,2 @@
-= form_for @recipe, :url => recipes_path, :html => { :class => "well form-horizontal"} do |f|
+= nested_form_for @recipe, :url => recipes_path, :html => { :class => "well form-horizontal"} do |f|
   = render :partial => "form", :locals => {:f => f}

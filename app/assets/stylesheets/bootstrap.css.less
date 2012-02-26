@@ -6,34 +6,43 @@
 // Your custom stylesheets goes here (override Less here)
 
 
-# // Landscape phones and down
-# @media (max-width: 480px) {
-#   .container { 
-#     width: 450px;
-#     margin: auto;  
-#   }
-# }
-#  
-# // Landscape phone to portrait tablet
-# @media (max-width: 768px) {
-#   .container { 
-#     width: 700px;
-#     margin: auto;  
-#   }
-# }
-#  
-# // Portrait tablet to landscape and desktop
-# @media (min-width: 768px) and (max-width: 980px) {
-#   .container { 
-#     width: 847px;
-#     margin: auto;  
-#   }
-# }
-#  
-# // Large desktop
-# @media (min-width: 1200px) { 
-#   .container {
-#     width: 847px;
-#     margin: auto;
-#   }
-# }
+// Landscape phones and down
+@media (max-width: 480px) {
+  body {
+    font-size: 18px;
+    padding-top: 0px;
+  }
+  
+  .sidebar-nav {
+    display: none;
+  }
+  
+  input {
+    font-size: 18px;
+    
+  }
+  .input-xlarge, .input-xxlarge, .input-large, .input-medium, textarea {
+    width: 100%;
+  }
+}
+ 
+// Landscape phone to portrait tablet
+@media (max-width: 768px) {
+  body { 
+    padding-top: 0px;
+  }
+}
+ 
+// Portrait tablet to landscape and desktop
+@media (min-width: 768px) and (max-width: 980px) {
+  body { 
+    padding-top: 0px;
+  }
+}
+ 
+// Large desktop
+@media (min-width: 980px) { 
+  body { 
+    padding-top: 60px;
+  }
+}

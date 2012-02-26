@@ -19,16 +19,17 @@
     %h3 Ingredients
     %ul
       - for i in @recipe.ingredients do
-        %li.ingredients= i.content
+        %li.ingredient= i.content
 
   %section.instrucions
     %h3 Instructions
     %ol
       - for i in @recipe.instructions do
-        %li
-          %p= i.content
-      
-
+        %li.instruction
+          .pull-right
+            %img{ src: "#{i.photo}"}      
+          %span= i.content
+          
   .form-actions
     = link_to "Back", recipes_path, :class => 'btn'
     = link_to "Edit", edit_recipe_path(@recipe), :class => 'btn'
