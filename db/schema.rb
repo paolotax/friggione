@@ -37,7 +37,8 @@ ActiveRecord::Schema.define(:version => 20120226065930) do
   add_index "ingredients", ["recipe_id"], :name => "index_ingredients_on_recipe_id"
 
   create_table "instructions", :force => true do |t|
-    t.string   "content"
+    t.string   "title"
+    t.text     "content"
     t.string   "position"
     t.string   "prep_time"
     t.string   "photo"
@@ -50,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20120226065930) do
 
   create_table "recipes", :force => true do |t|
     t.string   "title"
-    t.string   "summary"
+    t.text     "summary"
     t.string   "yield"
     t.string   "duration"
     t.string   "author"

@@ -2,7 +2,7 @@ class CreateRecipes < ActiveRecord::Migration
   def change
     create_table :recipes do |t|
       t.string :title
-      t.string :summary
+      t.text   :summary
       t.string :yield
       t.string :duration
       t.string :author

@@ -21,15 +21,27 @@
       - for i in @recipe.ingredients do
         %li.ingredient= i.content
 
-  %section.instrucions
+  %section.instructions
     %h3 Instructions
-    %ol
-      - for i in @recipe.instructions do
-        %li.instruction
-          .clearfix
-            .pull-right
-              %img{ src: "#{i.photo}"}      
-            %span= i.content
+    - for i in @recipe.instructions do
+      %dl{ class: "instruction alt"}
+        %dd.img
+          = image_tag i.photo unless i.photo.blank?
+          / %img{ src: "#{i.photo}"}
+        %dd
+          = i.content
+    
+  
+  
+  
+    / %h3 Instructions
+    / %ol
+    /   - for i in @recipe.instructions do
+    /     %li.instruction
+    /       .clearfix
+    /         .pull-right
+    /           %img{ src: "#{i.photo}"}      
+    /         %span= i.content
           
   .form-actions
     = link_to "Back", recipes_path, :class => 'btn'
