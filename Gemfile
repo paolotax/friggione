@@ -24,7 +24,7 @@ end
 
 gem 'jquery-rails'
 gem 'haml-rails'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '2.0.1'
 
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
