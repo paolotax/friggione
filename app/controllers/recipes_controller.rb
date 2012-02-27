@@ -1,6 +1,5 @@
 class RecipesController < ApplicationController
-  # GET /recipes
-  # GET /recipes.json
+
   def index
     @recipes = Recipe.all
 
@@ -10,8 +9,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  # GET /recipes/1
-  # GET /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
 
@@ -21,16 +18,10 @@ class RecipesController < ApplicationController
     end
   end
 
-  # GET /recipes/new
-  # GET /recipes/new.json
   def new
     @recipe = Recipe.new
-    
-    4.times do
-     ingredient = @recipe.ingredients.build 
-    end
-    
-    4.times { instruction = @recipe.instructions.build }
+    @recipe.ingredients.build 
+    @recipe.instructions.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,13 +29,10 @@ class RecipesController < ApplicationController
     end
   end
 
-  # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find(params[:id])
   end
 
-  # POST /recipes
-  # POST /recipes.json
   def create
     @recipe = Recipe.new(params[:recipe])
 
@@ -59,8 +47,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  # PUT /recipes/1
-  # PUT /recipes/1.json
   def update
     @recipe = Recipe.find(params[:id])
 
@@ -75,8 +61,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  # DELETE /recipes/1
-  # DELETE /recipes/1.json
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy

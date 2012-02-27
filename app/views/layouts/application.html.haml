@@ -55,8 +55,8 @@
                         = link_to "Sign Out", signout_path
                 - else
                   %li
-                    =link_to "Sign in with Twitter", "/auth/twitter"
-
+                    %a{ href: "/auth/twitter" }
+                      %img{ src: "#{asset_path('sign-in-with-twitter-d.png')}", alt: "Sign in with Twitter"}
 
 
 

@@ -26,9 +26,10 @@
     %ol
       - for i in @recipe.instructions do
         %li.instruction
-          .pull-right
-            %img{ src: "#{i.photo}"}      
-          %span= i.content
+          .clearfix
+            .pull-right
+              %img{ src: "#{i.photo}"}      
+            %span= i.content
           
   .form-actions
     = link_to "Back", recipes_path, :class => 'btn'
