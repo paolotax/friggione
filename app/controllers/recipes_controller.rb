@@ -49,7 +49,7 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-
+    # raise params.inspect
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
         format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
@@ -62,6 +62,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
+    
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
 
