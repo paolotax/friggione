@@ -1,0 +1,14 @@
+%div
+  .item.hrecipe
+    %small.time
+      %time.timeago{ datetime: "#{time_ago_in_words(recipe.created_at)}"}
+    %a{ href: "#{recipe_path(recipe)}"}
+      %img.avatar{ src: "#{recipe.photo}"}
+      %strong.fullname= recipe.title
+
+    %span.destinatario
+      %i= "@#{recipe.author}"
+
+    %p= recipe.summary
+  %a
+    

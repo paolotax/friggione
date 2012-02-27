@@ -1,23 +1,36 @@
-%h1 Recipes
-%table{:class => "table table-striped"}
-  %thead
-    %tr
-      %th ID
-      %th
-        = t("activerecord.attributes.recipe.title", :default => t("activerecord.labels.title", :default => "Title"))
-      %th Created at
-      %th Actions
-  %tbody
+.content-main
+  .content-header
+    .header-inner
+      %h2 Ricette
+  
+  #items.recipes
     - @recipes.each do |recipe|
-      %tr
-        %td= recipe.id
-        %td= link_to recipe.title, recipe_path(recipe)
-        %td= recipe.created_at
-        %td
-          = link_to "Show", recipe_path(recipe)
-          - unless current_user.nil?
-            = link_to "Edit", edit_recipe_path(recipe)
-            = link_to "Destroy", recipe_path(recipe), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+      = render recipe
+      
+    
 
-- unless current_user.nil?
-  = link_to "New Recipe", new_recipe_path, :class => 'btn btn-primary'
+
+
+/ %h1 Recipes
+/ %table{:class => "table table-striped"}
+/   %thead
+/     %tr
+/       %th ID
+/       %th
+/         = t("activerecord.attributes.recipe.title", :default => t("activerecord.labels.title", :default => "Title"))
+/       %th Created at
+/       %th Actions
+/   %tbody
+/     - @recipes.each do |recipe|
+/       %tr
+/         %td= recipe.id
+/         %td= link_to recipe.title, recipe_path(recipe)
+/         %td= recipe.created_at
+/         %td
+/           = link_to "Show", recipe_path(recipe)
+/           - unless current_user.nil?
+/             = link_to "Edit", edit_recipe_path(recipe)
+/             = link_to "Destroy", recipe_path(recipe), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+/ 
+/ - unless current_user.nil?
+/   = link_to "New Recipe", new_recipe_path, :class => 'btn btn-primary'
