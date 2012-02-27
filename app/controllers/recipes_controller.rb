@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.includes([:ingredients, :instructions]).order(:created_at).all
 
     respond_to do |format|
       format.html # index.html.erb

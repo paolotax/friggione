@@ -1,15 +1,15 @@
 %div.hrecipe.well
-  %div.video
-    %a.sublime{ href: "#{@recipe.video}" }
-      Clikkami
-      %img{ src: "http://localhost:3000/images/video-thumb.jpg", alt: "" }
-    %video.sublime.zoom{ style: "display:none", width: "640", height: "360", preload: "none"}
-      %source{ src: "#{@recipe.video}" }
-      
   %h2.fn= @recipe.title
-  by
-  %span.author= @recipe.author
-  %span.datePublished= time_ago_in_words(@recipe.created_at)
+  
+  %span.author= "@#{@recipe.author}"
+  .datePublished= "posted #{time_ago_in_words(@recipe.created_at)} ago"
+  - unless @recipe.video.blank?
+    .video
+      %a.sublime{ href: "#{@recipe.video}" }
+        %i.icon-facetime-video
+        watch video
+      %video.sublime.zoom{ style: "display:none", width: "640", height: "360", preload: "none"}
+        %source{ src: "#{@recipe.video}" }
   %br
   %br
   %p.summary= @recipe.summary
