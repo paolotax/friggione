@@ -35,7 +35,8 @@
           .nav-collapse
             %ul.nav
               %li= link_to "Ricette", "/recipes"
-              %li= link_to "Nuova ricetta", "/recipes/new"
+              - unless current_user.nil?
+                %li= link_to "Nuova ricetta", "/recipes/new"
               
             .pull-right
               %ul.nav
@@ -68,7 +69,8 @@
             %ul.nav.nav-list
               %li.nav-header Sidebar
               %li= link_to "Ricette", "/recipes"
-              %li= link_to "Nuova ricetta", "/recipes/new"
+              - unless current_user.nil?
+                %li= link_to "Nuova ricetta", "/recipes/new"
               
         .span9
           = yield

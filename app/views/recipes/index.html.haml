@@ -15,7 +15,9 @@
         %td= recipe.created_at
         %td
           = link_to "Show", recipe_path(recipe)
-          = link_to "Edit", edit_recipe_path(recipe)
-          = link_to "Destroy", recipe_path(recipe), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+          - unless current_user.nil?
+            = link_to "Edit", edit_recipe_path(recipe)
+            = link_to "Destroy", recipe_path(recipe), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
 
-= link_to "New", new_recipe_path, :class => 'btn btn-primary'
+- unless current_user.nil?
+  = link_to "New Recipe", new_recipe_path, :class => 'btn btn-primary'
