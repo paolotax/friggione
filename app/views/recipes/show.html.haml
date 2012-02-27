@@ -18,12 +18,12 @@
   %section.ingredients
     %h3 Ingredients
     %ul
-      - for i in @recipe.ingredients do
+      - for i in @recipe.ingredients.order("ingredients.id asc") do
         %li.ingredient= i.content
 
   %section.instructions
     %h3 Instructions
-    - for i in @recipe.instructions do
+    - for i in @recipe.instructions.order("instructions.id asc") do
       %dl{ class: "instruction alt"}
         %dd.img
           = image_tag i.photo unless i.photo.blank?
