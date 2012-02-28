@@ -57,9 +57,11 @@
                 - else
                   %li
                     %a{ href: "/auth/twitter" }
-                      %img{ src: "#{asset_path('sign-in-with-twitter-d.png')}", alt: "Sign in with Twitter"}
+                      %img{ src: "#{asset_path('sign-in-with-twitter-d.png')}", alt: "Sign in with twitter"}
                   %li
-                    = link_to "Sign in with facebook", "/auth/facebook"
+                    %a{ href: "/auth/facebook" }
+                      %img{ src: "#{asset_path('facebook-login-button.png')}", alt: "Sign in with facebook"}
+
 
 
 
