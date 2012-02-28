@@ -3,7 +3,8 @@
     %small.time
       %time.timeago{ datetime: "#{time_ago_in_words(recipe.created_at)}"}
     %a{ href: "#{recipe_path(recipe)}"}
-      %img.avatar{ src: "#{recipe.photo}"}
+      
+      %img.avatar{ src: "#{recipe.photo_url(:thumb)}", alt: "#{recipe.title}"}
       %strong.fullname= recipe.title
 
     %span.destinatario

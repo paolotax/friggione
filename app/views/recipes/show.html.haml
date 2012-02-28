@@ -13,8 +13,8 @@
   %br
   %br
   %p.summary= @recipe.summary
-  %img{ src: "#{@recipe.photo}", class: "photo", width: 100, height: 100, alt: "#{@recipe.title}"}
-
+  = image_tag @recipe.photo_url(:thumb), alt: "#{@recipe.title}" unless @recipe.photo.blank?
+  
   %section.ingredients
     %h3 Ingredients
     %ul
