@@ -18,14 +18,17 @@ group :assets do
   
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
-
+  
+  gem 'bootstrap-sass'
   gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'simple_form'
 
-gem 'twitter-bootstrap-rails'
+
+# gem 'twitter-bootstrap-rails'
 
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
