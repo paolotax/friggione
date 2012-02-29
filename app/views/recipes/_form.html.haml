@@ -24,12 +24,12 @@
     .control-group
       %label.control-label{ for: :photo } Photo
       .controls
-        = f.file_field :photo
-
+        = f.file_field :photo, class: 'input-large'
+    
     .control-group
       %label.control-label{ for: :video } Video
       .controls
-        = f.file_field :video
+        = f.file_field :video, class: 'input-large'
 
 .well      
   %fieldset
@@ -56,7 +56,7 @@
       .control-group
         %label.control-label{ for: :photo } Photo
         .controls
-          = instruction.file_field :photo
+          = instruction.file_field :photo, class: 'input-large'
 
     = f.link_to_add raw("<i class='icon-plus icon-white'></i>instruction"), :instructions, class: "btn btn-success btn-mini"
     
