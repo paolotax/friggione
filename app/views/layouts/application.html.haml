@@ -9,11 +9,6 @@
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     / Le styles
     = stylesheet_link_tag    "application"
-    :css
-      body {
-        / padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    / Le fav and touch icons
 
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0"}
 
@@ -24,47 +19,7 @@
 
 
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{:href => ""}Friggione.it
-          .nav-collapse
-            %ul.nav
-              %li= link_to "Ricette", "/recipes"
-              - unless current_user.nil?
-                %li= link_to "Nuova ricetta", "/recipes/new"
-              
-            .pull-right
-              %ul.nav
-                - if current_user
-                  %li.dropdown
-                    %a{ class: "dropdown-toggle", href: "#", "data-toggle" => "dropdown" }
-                      / %img{ src: "#{current_user.image}" }
-                      = "Welcome #{current_user.name}!"
-                      %b.caret
-                    %ul.dropdown-menu
-                      %li
-                        %a
-                          %img.avatar.size32{ src: "#{current_user.image}" }
-                          = current_user.name
-                        
-                      %li
-                        = link_to "Sign Out", signout_path
-                - else
-                  %li
-                    %a{ href: "/auth/twitter" }
-                      %img{ src: "#{asset_path('sign-in-with-twitter-d.png')}", alt: "Sign in with twitter"}
-                  %li
-                    %a{ href: "/auth/facebook" }
-                      %img{ src: "#{asset_path('facebook-login-button.png')}", alt: "Sign in with facebook"}
-
-
-
-
+    = render :partial => 'layouts/header'
     .container.page
 
       .row
