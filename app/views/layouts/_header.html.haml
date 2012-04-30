@@ -17,13 +17,11 @@
             - if current_user
               %li.dropdown
                 %a{ class: "dropdown-toggle", href: "#", "data-toggle" => "dropdown" }
-                  / %img{ src: "#{current_user.image}" }
-                  = "Welcome #{current_user.name}!"
+                  %img.size19{ src: "#{current_user.image}" }
                   %b.caret
                 %ul.dropdown-menu
                   %li.current-user
-                    %a
-                      %img.size32{ src: "#{current_user.image}" }
+                    %a                      
                       = current_user.name
                     
                   %li

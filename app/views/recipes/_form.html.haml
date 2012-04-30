@@ -4,22 +4,22 @@
     .control-group
       %label.control-label{ for: :title } Title
       .controls
-        = f.text_field :title, :class => 'input-xlarge', :required => true
+        = f.text_field :title, :class => 'input-xlarge'
       
     .control-group
       %label.control-label{ for: :summary } Summary
       .controls
-        = f.text_area :summary, :class => 'input-xlarge', rows: 3, :required => true
+        = f.text_area :summary, :class => 'input-xlarge', rows: 3
 
     .control-group
       %label.control-label{ for: :author } Author
       .controls
-        = f.text_field :author, :class => 'input-large', :required => true
+        = f.text_field :author, :class => 'input-large'
 
     .control-group
       %label.control-label{ for: :yield } Yield
       .controls
-        = f.text_field :yield, :class => 'input-large', :required => true
+        = f.text_field :yield, :class => 'input-large'
 
     .control-group
       %label.control-label{ for: :photo } Photo
